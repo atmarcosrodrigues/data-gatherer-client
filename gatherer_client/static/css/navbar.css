@@ -1,0 +1,112 @@
+
+.navbar{
+        background: #2C3E50;
+  border-bottom: 2px solid #E7E7E7;
+  color: #f3f3f3;
+    overflow: inherit;
+}
+
+.navbar-default .navbar-brand{
+}
+
+.navbar-brand>img{
+	 margin: -10px 0px;
+	border-radius: 5px;
+
+}
+.navbar-collapse.in{
+    overflow: visible;
+}
+.top-nav>li {
+  display: inline-block;
+  float: right;
+    padding-right: 0px;
+}
+.top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus{
+    color: #fff;
+  background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.1);
+}
+
+.top-nav>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 29px;
+  color: #fefefe;
+  font-size: 13px;
+}
+.top-nav {
+
+  padding: 0 25px;
+  max-height: 30px;
+  padding: 0px 25px 0px 0px;
+}
+
+.top-nav>.open>.dropdown-menu{
+    
+  float: left;
+  position: absolute;
+  margin-top: 2px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a{
+    color: #333;
+    white-space: normal;
+    padding: 5px 01px 5px 15px;
+}
+
+.top-nav>.open>.dropdown-menu>li>a:hover {
+  background-color: #303641;
+  color: #fefefe;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+}
+
+th { text-align: center; }
+
+.divider{
+    position:absolute;
+    left:50%;
+    top:10%;
+    bottom:10%;
+    border-left:1px solid lightgray;
+}
+
+
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+   /* padding-bottom: 200px; */}
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin: 10px 0 0 25px; }
+

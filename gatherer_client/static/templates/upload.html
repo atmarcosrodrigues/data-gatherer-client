@@ -1,0 +1,70 @@
+<div>
+	<h1> New Entry </h1>
+<div style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage">
+  <md-content>
+<div style="width: 50%; float:left; margin-left: 20px; margin-top: 20px; padding-right: 0px;">
+  <input  class="form-control" type="text" placeholder="Author" ng-model="entry.author">
+  <input  class="form-control" type="text" ng-disabled="entry.autor == ''" placeholder="Org" ng-model="entry.org">
+  <input  class="form-control" type="text" placeholder="Uploader" ng-model="entry.uploader">
+  <input  class="form-control" type="text" placeholder="Entry Title" ng-model="entry.title">
+</div>
+<div style="float:right; float: right; margin-right:30px;">
+     <h4>Period Start:</h4>
+    <md-datepicker ng-model="entry.periodStart" md-placeholder="Enter date"></md-datepicker>
+
+   <h4>Period End:</h4>
+    <md-datepicker ng-model="entry.periodEnd" md-placeholder="Enter date"></md-datepicker>
+
+    <div class="validation-messages" ng-messages="myForm.dateField.$error">
+        <div ng-message="valid">The entered value is not a date!</div>
+        <div ng-message="required">This date is required!</div>
+        <div ng-message="mindate">Date is too early!</div>
+        <div ng-message="maxdate">Date is too late!</div>
+        <div ng-message="filtered">Only weekends are allowed!</div> 
+      </div>
+    
+<br><br>
+<label class="import-file">
+    <input id="files" type="file" onchange="angular.element(this).scope().fileNameChanged(this)">
+    <div> {[{ readFileStatus }]} </div>  </label>
+</div>
+<br>
+<br>
+<br>
+<div style="width: 100%; margin: 0 auto; float:left; margin-top:20px;" >
+	<div class="validation-messages">
+		<div style="margin-bottom: 15px;"> {[{ errorMessage }]}</div>
+	</div>
+ <button ng-click="uploadFilesList()" >Send Entry</button>
+</div>
+
+ </md-content>
+</div>
+
+
+
+<!--
+<div style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage">
+  <md-content>
+
+    <h4>Standard date-picker</h4>
+    <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+
+          <div class="validation-messages" ng-messages="myForm.dateField.$error">
+        <div ng-message="valid">The entered value is not a date!</div>
+        <div ng-message="required">This date is required!</div>
+        <div ng-message="mindate">Date is too early!</div>
+        <div ng-message="maxdate">Date is too late!</div>
+        <div ng-message="filtered">Only weekends are allowed!</div>
+      </div>
+    </form>
+
+  </md-content>
+</div>
+-->
+
+
+<hr>
+     </div>
+
+

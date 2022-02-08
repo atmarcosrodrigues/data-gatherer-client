@@ -1,0 +1,70 @@
+<style>
+
+md-dialog._md-transition-in {
+    opacity: 1;
+    width: 70%;
+}
+
+</style>
+
+
+<div>
+ 	<h1> Edit Entry </h1>
+<div style="padding: 40px;" ng-cloak="" class="datepickerdemoBasicUsage">
+  <md-content>
+<div style="width: 40%; float:left; margin-left: 20px; margin-top: 20px; padding-right: 0px;">
+  Author: <input  class="form-control" type="text" placeholder="Author" ng-model="currentFile.author">
+  Org: <input  class="form-control" type="text" placeholder="Org" ng-model="currentFile.org">
+  Uploader: <input  class="form-control" type="text" placeholder="Uploader" ng-model="currentFile.uploader">
+  Entry Title: <input  class="form-control" type="text" placeholder="Title" ng-model="currentFile.title">
+<!--<button ng-click="cancel();">Cancel</button> <button style="margin-left:10px;" ng-click="#">Save changes</button>-->
+ <h4>Period Start:</h4>
+    <md-datepicker ng-model="currentFile.periodStart" md-placeholder="Enter date"></md-datepicker>
+
+   <h4>Period End:</h4>
+    <md-datepicker ng-model="currentFile.periodEnd" md-placeholder="Enter date"></md-datepicker>
+<br><br>
+<button ng-click="cancel();">Cancel</button> <button style="margin-left:10px;" ng-click="updateFile()">Save changes</button>
+
+</div>
+
+<!-- <div style="float:right; border-left:1px solid #000;height:500px"></div>-->
+<div class="divider"></div>
+
+
+<div style="float:right;max-width: 40%;margin-right:30px;">
+   
+<br><br>
+<label class="import-file"><h4> Upload a new file for this entry:</h4><br>
+    <input id="file" type="file" onchange="angular.element(this).scope().newFileEntry(this)">
+     <br><button ng-click="sendFile();">Send File</button><br>
+</label>
+
+
+<hr>
+      <table class="table table-bordered table-striped table-hover">
+		<caption style="text-align: center;color:black;font-weight: bold;" >Current File</caption> 
+        <thead>
+            <tr>
+            <th> File Name </th>
+            <th> Size </th>
+            <th> Upload Date </th>
+            </tr>
+        </thead>
+
+        <tbody><tr>
+            <td>{[{currentFile.title}]}</td>
+            <td>{[{currentFile.file_metadata.size}]}</td>
+            <td>{[{currentFile.updated_at}]}</td>
+            </tr> </tbody>
+    
+  </table>
+</div>
+  </md-content>
+</div>
+
+
+
+      </div>
+
+

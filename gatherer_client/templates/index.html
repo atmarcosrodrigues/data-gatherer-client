@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gathererClient">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/png" href="/static/img/silibrina.png">
+    <title>- Data Gatherer -</title>
+    
+    <!-- Bootstrap Core CSS -->
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/bootstrap_2.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css">
+    <!-- Font Awesome Fonts -->
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/sb-admin.css">
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/social.css">
+    <!-- Confirm Dialog css -->
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/jquery.frontbox-1.1.css">
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/tabs.css">
+    <link media="all" type="text/css" rel="stylesheet" href="/static/css/navbar.css">
+    <!-- AngularJS Script -->
+    <script src="/static/js/angular/angular.js"></script>
+    <script src="/static/js/angular/angular-animate.min.js"></script>
+    <script src="/static/js/angular/angular-route.min.js"></script>
+    <script src="/static/js/angular/angular-aria.min.js"></script>
+    <script src="/static/js/angular/angular-messages.min.js"></script>
+    <script src="/static/js/angular/svg-assets-cache.js"></script>
+    <script src="/static/js/angular/angular-material.js"></script>
+    <!-- Gatherer script -->
+    <script src="/static/js/jquery.frontbox-1.1.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script> -->
+    <script src="/static/js/gathererclient-view.js" charset="UTF-8"></script>
+    <script src="/static/js/gatherermodule.js" charset="UTF-8"></script>
+    <script src="/static/js/gathererclient-script.js" charset="UTF-8"></script>
+    <script src="/static/js/gathererclient-newentry.js" charset="UTF-8"></script>
+  </head>
+  
+  <body ng-controller="gathererClientCtrl">
+  
+    <nav style="border-radius:0;" class="navbar navbar-default navbar-xs" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" height="40px" src="/static/img/silibrina.png">
+        </a>
+        <h2 style="float:right;">- Gatherer -</h2>
+      </div>
+      <div ng-include="template.top_menu"></div>
+    </nav>
+    
+    <div class="container">
+      <div id="wrapper">
+        <!-- PAGE WRAPPER -->
+        <!-- Top Advertising Area  -->
+        <div class="col-md-12 ">
+          <div class="ads-top">
+            <div style="color:#ddd;padding:8px;border:1px dashed #ddd">
+              <h5> Top Ads Code here - Profile Page </h5>
+            </div>
+          </div>
+        </div>
+        
+        <!-- /# TopAdvertising Area  -->
+        
+        <!-- Sidebar -->
+        <section ng-controller="gathererClientNewEntry">
+          <div class="container">
+            <div class="row">
+              <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
+              <div class="board-inner">
+                <ul class="nav nav-tabs" id="myTab">
+                  <li ng-class="{active: main_tab==template.op1}">
+                    <a href="#" ng-click="main_tab=template.op1; tab_title=titles.op1" title="Option 1">
+                      <span class="round-tabs one">
+                        <img alt="Brand" height="40px" style="margin-top: -10px;" src="/static/img/icon_default.png">
+                        <i class="fa fa-tachometer fa-stack-1x "></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{active: main_tab==template.upload}">
+                    <a href="#" ng-click="main_tab=template.upload; tab_title=titles.upload" title="Upload">
+                      <span class="round-tabs two">
+                        <img alt="Brand" width="50px50px50px50px50px" height="52px" style="margin-top: -10px;" src="/static/img/icon_upload.png">
+                        <i class="fa fa-cloud-upload fa-stack-1x "></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{active: main_tab==template.table_files}">
+                    <a href="#" ng-click="main_tab=template.table_files; tab_title=titles.table_files" title="My Files">
+                      <span class="round-tabs three">
+                        <img alt="Brand" height="52px" style="margin-top: -10px;" src="https://www.egnyte.com/assets/6/icons/icons-cloud-file-server-wp.png">
+                        <i class="fa fa-dropbox fa-stack-1x "></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{active: main_tab==template.op4}">
+                    <a href="#" ng-click="main_tab=template.op4; tab_title=titles.op4" title="Send Files">
+                      <span class="round-tabs four">
+                        <img alt="Brand" height="40px" style="margin-top: -10px;" src="/static/img/icon_default.png">
+                        <i class="fa fa-paper-plane fa-stack-1x "></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li ng-class="{active: tab_title==titles.op5}">
+                    <a href="#" ng-click="main_tab=template.op5; tab_title=titles.op5" title="Other option">
+                      <span class="round-tabs five">
+                        <img alt="Brand" height="40px" style="margin-top: -10px;" src="/static/img/icon_default.png">
+                        <i class="fa fa-files-o fa-stack-1x "></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="tab-content">
+                <!-- Tab Content -->
+                <div class="header-content">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <i style="font-size:18px;" class="fa fa-dropbox"></i> {[{ tab_title }]}
+                      </div>
+                      <div class="panel-body">
+                        <div class="bootstrap-table">
+                          <div ng-show="main_tab==template.table_files" class="fixed-table-toolbar">
+                            <div class="pull-left search" style="width: 100%;">
+                              <!--<input class="form-control" type="text" ng-model="searchKeyword"   style="float:left; width: 30%" placeholder="Search">-->
+                              <h4 style="width:13%;">Search: </h4>
+                              <input id="search_author" class="form-control" type="text" ng-model="entry.searchAuthor" style="float:left; width: 30%" ng-change="search()" placeholder="Author">
+                              <input id="search_title" class="form-control" type="text" ng-model="entry.searchTitle" style="float:left; width: 30%" ng-change="search()" placeholder="Title">
+                              <input id="search_title" class="form-control" type="text" ng-model="searchTitle" style="visibility:hidden;float:left; width: 30%" placeholder="Title">
+                              <input id="search_uploader" class="form-control" type="text" ng-model="entry.searchUploader" style="float:left; width: 30%" ng-change="search()" placeholder="Uploader">
+                              <input id="search_org" class="form-control" type="text" ng-model="entry.searchOrg" style="float:left; width: 30%" ng-change="search()" placeholder="Org">
+                              <div style="padding-top: 150px; padding-bottom: 55px;">
+                                <div style="float:left;">
+                                  <h4>Period Start:</h4>
+                                  <md-datepicker ng-model="entry.searchPeriodStart" md-placeholder="Enter date" ng-change="search()"></md-datepicker>
+                                </div>
+                                <div style="float:left;">
+                                  <h4>Period End:</h4>
+                                  <md-datepicker ng-model="entry.searchPeriodEnd" md-placeholder="Enter date" ng-change="search()"></md-datepicker>
+                                </div>
+                              </div>
+                              <div style="float:right; width:20%; color: rgba(0,0,0,0.54);">Entries by page: <input id="limit_entries" class="form-control" type="number" ng-model="limitEntries" placeholder="Entries by page" min="1" value="10" style="float:right; width:30%" ng-change="updateLimitEntries()">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="fixed-table-container" style="padding-bottom: 0px;">
+                            <div class="fixed-table-header" style="display: none;">
+                              <table></table>
+                            </div>
+                            <div ng-include="main_tab"></div>
+                            <div ng-show="main_tab==template.table_files" ng-include="template.pagination"></div>
+                          </div>
+                        </div>
+                        <!-- /# END panel default -->
+                      </div>
+                      <!-- /# END col-md 12 -->
+                    </div>
+                    <!-- /# END HEADER CONTETNT -->
+                    <!-- /#Tab Content -->
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        
+        <!-- Social lateral bar -->
+        <div ng-include="template.social"></div>
+        
+        <!-- jQuery -->
+        <script src="/static/js/jquery-1.11.3.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/static/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/static/js/tables.min.js"></script>
+        <script src="/static/js/jquery.frontbox-1.1.js"></script>
+        <!-- bottom Advertising Area  -->
+        <div class="col-md-12">
+          <div class="ads-bottom">
+            <div style="color:#ddd;padding:8px;border:1px dashed #ddd">
+              <h5> Bottom Ads Code here - Profile Page </h5>
+            </div>
+          </div>
+        </div>
+        <!-- /# bottom Advertising Area  -->
+        <!-- /# End page-content-wrapper -->
+      </div>
+      
+      <!-- /#wrapper -->
+    </div>
+  </body>
+</html>

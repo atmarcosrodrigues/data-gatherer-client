@@ -1,0 +1,78 @@
+<div class="fixed-table-body">
+   <div class="fixed-table-loading" style="top: 37px;"></div>
+   <table id="table-pagination" data-toggle="table" data-classes="table table-bordered table-striped table-hover" data-search-align="left" class="table table-bordered table-striped table-hover">
+      <tbody>
+         <tr>
+            <td style="">
+               <div class="th-inner sortable" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAQAAADYWf5HAAAAkElEQVQoz7XQMQ5AQBCF4dWQSJxC5wwax1Cq1e7BAdxD5SL+Tq/QCM1oNiJidwox0355mXnG/DrEtIQ6azioNZQxI0ykPhTQIwhCR+BmBYtlK7kLJYwWCcJA9M4qdrZrd8pPjZWPtOqdRQy320YSV17OatFC4euts6z39GYMKRPCTKY9UnPQ6P+GtMRfGtPnBCiqhAeJPmkqAAAAAElFTkSuQmCC&quot;);">
+                  <i class="fa fa-list-ol"></i>
+               </div>
+               <div class="fht-cell">  </div>
+            </td>
+            <th class=" hidden-xs" style="" ng-click="sortType = 'author'; sortReverse = !sortReverse">
+               <div class="fht-cell"> Author </div>
+            </th>
+            <th ng-click="sortType = 'title'; sortReverse = !sortReverse" >
+               <div class="fht-cell"> Title</div>
+            </th>
+            <th class=" hidden-xs" style="" ng-click="sortType = 'file_metadata.size'; sortReverse = !sortReverse">
+
+               <div class="fht-cell">Size</div>
+            </th>
+            <th class=" hidden-xs" style="" ng-click="sortType = 'upload_date'; sortReverse = !sortReverse">
+               <div class="th-inner "><i class="fa fa-clock-o"></i> Upload data</div>
+               <div class="fht-cell"></div>
+            </th>
+            <th class=" hidden-xs" style="" ng-click="sortType = 'upload_time'; sortReverse = !sortReverse">
+               <div class="th-inner ">
+                  <i class="fa fa-globe"></i> Org
+               </div>
+               <div class="fht-cell">
+               </div>
+            </th>
+            <th style="">
+               <div class="th-inner "><i class="fa fa-link"></i> File Link</div>
+               <div class="fht-cell"></div>
+            </th>
+            <th style="">
+               <div class="th-inner "><i class="fa fa-link"></i>  Options</div>
+               <div class="fht-cell"></div>
+            </th>
+         </tr>
+      </tbody>
+      <tbody style="text-align:left;" ng-if="response.data.entries">
+         <tr id="tr-1" data-index="0" ng-repeat="file in response.data.entries | filter: searchKeyword | orderBy:sortType:sortReverse" >
+            <td style="" data-field="id">{[{ $index }]}
+            </td>
+            <td class=" hidden-xs" style="" data-field="type">
+               <i class="fa fa-picture-o"></i> {[{ file.author }]}
+            </td>
+            <td style="" data-field="name">
+               {[{ file.title }]}
+            </td>
+            <td class=" hidden-xs" style="" data-field="size">
+               {[{ file.file_metadata.size }]}
+            </td>
+            <td class=" hidden-xs" style="" data-field="uploadAt">
+               {[{ file.updated_at}]}
+            </td>
+            <td class=" hidden-xs" style="" data-field="downloadCounter">
+               {[{ file.org }]}
+            </td>
+            <td style="" data-field="fileLink">
+               <a target="_blank" style="text-decoration:underline;
+                  font-size:14px;" href="{[{ file.file_metadata.url}]}">
+               {[{ file.file_metadata.original_name  }]}
+               </a>
+            </td>
+            <td style="" data-field="fileOptions">
+		<div style="visibility: hidden;" >{[{file._id }]}</div>
+               <a style="font-size:18px; margin:0 10px;" id="delete-1" data-id="1778" href="#" role="button" class="delete_confirm" ng-click="showAdvanced($event, file);">
+               Edit               </a>
+               <a style="font-size:18px;" id="lock-1" data-id="1778" role="button" href="#" class="lock_confirm" ng-click="showConfirm($event, file._id)" >
+               Delete               </a>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
